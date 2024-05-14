@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/p_info_cliente"
+        android:title="@string/cliente_info"
+        android:icon="@drawable/ic_info_cliente"
+        />
+
+    <item
+        android:id="@+id/Registro_cliente"
+        android:title="@string/Reg_client"
+        android:icon="@drawable/ic_reg_clien"
+        />
+
+    <item
+        android:id="@+id/cerrar_sesion"
+        android:title="@string/Exit2"
+        android:icon="@drawable/ic_session"
+        />
+</menu>

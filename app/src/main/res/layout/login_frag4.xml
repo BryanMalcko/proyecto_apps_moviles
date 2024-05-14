@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".login"
+    android:id="@+id/container"
+    android:background="@color/gray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:ignore="UseCompoundDrawables,UselessParent">  <!-- Puedes cambiar a "horizontal" si lo necesitas -->
+
+        <!-- Aquí puedes agregar tus elementos que deseas dentro del LinearLayout -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="@string/Login"
+            android:textColor="#FFEBEE"
+            android:textSize="30sp"
+            android:background="@color/black"
+            android:layout_marginTop="40dp"
+            tools:ignore="RtlHardcoded" />
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:src="@drawable/login"
+            android:layout_gravity="center_horizontal"
+            android:contentDescription="@string/info_img_login"
+            android:layout_marginTop="25dp"
+            />
+
+        <EditText
+            android:id="@+id/text_usr"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/Hint_usr"
+            android:inputType="text"
+            android:minHeight="48dp"
+            android:textColorHint="#FFEBEE"
+            tools:ignore="VisualLintTextFieldSize"
+            android:textAlignment="center"
+            android:layout_marginTop="30dp"/>
+
+        <EditText
+            android:id="@+id/txt_pssw"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:autofillHints=""
+            android:hint="@string/hint_contrase"
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:textColorHint="#FFEBEE"
+            tools:ignore="VisualLintTextFieldSize"
+            android:textAlignment="center"
+            android:layout_marginTop="30dp"/>
+        <Button
+            android:id="@+id/acceder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/botton_acceder"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:id="@+id/tv_reg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hint_registrar"
+            android:layout_gravity="center_horizontal"
+            android:textSize="20sp"
+            android:textColor="@color/black"
+            android:layout_marginTop="20dp"
+            />
+
+    </LinearLayout>
+
+</FrameLayout>

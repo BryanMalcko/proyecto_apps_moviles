@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hola">Hola, Soy un Fragmento</string>
+    <string name="texto_cliente">Bienvenido a la pantalla del cliente!!\nEn la parte de abajo tenemos un menú donde:\n- Encontrarás información\n- Puedes acceder como admin\n- Puedes registrarte</string>
+    <string name="info_cliente">Hola!\nAca esta la informacion del cliente\npd. tambien soy fragmento</string>
+    <string name="Menufrag3">Fragmento3</string>
+    <string name="login">Login</string>
+    <string name="login_prueba">soy la prueba del login</string>
+    <string name="Login">Login</string>
+    <string name="info_img_login">imagen de referencia</string>
+    <string name="Nombre">Nombre</string>
+    <string name="Hint_usr">Usuario</string>
+    <string name="botton_acceder">Acceder</string>
+    <string name="hint_registrar">Registrar</string>
+    <string name="Usr_rgs">Registro!</string>
+    <string name="Edad">Edad</string>
+    <string name="Registro_button">Hecho!</string>
+    <string name="Reg_client">Registrar cliente</string>
+    <string name="cliente_info">Información</string>
+    <string name="Exit2">Cerrar Sesión</string>
+    <string name="texto_principal_Adm">Pantalla Principal Administrador</string>
+    <string name="Cerrar_sesion">¿Desea Cerrar Sesion?</string>
+    <string name="Cerrar_sesion_si">Si</string>
+</resources>
