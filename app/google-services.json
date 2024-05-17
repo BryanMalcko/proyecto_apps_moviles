@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "977620228393",
+    "project_id": "proyecto-final-de-apps-moviles",
+    "storage_bucket": "proyecto-final-de-apps-moviles.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:977620228393:android:88a11cb93ffbd5889bff38",
+        "android_client_info": {
+          "package_name": "com.example.fragmentos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7FebmE10nNv1lIGUEz3pkpGibE6iSnFI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

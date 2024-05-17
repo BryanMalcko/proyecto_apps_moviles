@@ -69,7 +69,7 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="20dp"
             android:text="@string/botton_acceder"
-            android:textColor="#C5E1A5"
+            android:textColor="@color/black"
             android:textSize="20sp"/>
 
 
