@@ -1,103 +1,54 @@
 package com.example.fragmentos;
 
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-
+import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link login#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class login extends Fragment {
 
-    TextView tv_reg;
-
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public login() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment login.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static login newInstance(String param1, String param2) {
-        login fragment = new login();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private EditText emailEditText, passwordEditText;
+    private Button loginButton;
+    private FirebaseAuth mAuth;
 
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.login_frag4, container, false);
 
-        tv_reg = (TextView) view.findViewById(R.id.tv_reg);
-        final EditText usernameEditText = (EditText) view.findViewById(R.id.text_usr);
-        final EditText passwordEditText = (EditText) view.findViewById(R.id.txt_pssw);
-        Button loginButton = (Button) view.findViewById(R.id.acceder);
+        // Inicializar Firebase Auth
+        mAuth = FirebaseAuth.getInstance();
 
-        tv_reg.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // Código existente para cambiar de fragmento
-                Fragment newFragment = new Frag2();
-                FragmentManager fragmentManager = getActivity().getSupportFragmentManager();
-                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                fragmentTransaction.replace(R.id.container, newFragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
-            }
-        });
+        emailEditText = view.findViewById(R.id.email);
+        passwordEditText = view.findViewById(R.id.password);
+        loginButton = view.findViewById(R.id.login);
 
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String username = usernameEditText.getText().toString();
-                String password = passwordEditText.getText().toString();
-                if (username.equals("a") && password.equals("1")) {
-                    Intent intent = new Intent(getActivity(), Usuario.class);
-                    startActivity(intent);
+                String email = emailEditText.getText().toString().trim();
+                String password = passwordEditText.getText().toString().trim();
+
+                if (!isValidEmail(email)) {
+                    emailEditText.setError("Correo electrónico no válido.");
+                    emailEditText.requestFocus();
+                } else if (!isValidPassword(password)) {
+                    passwordEditText.setError("La contraseña debe tener al menos 6 caracteres.");
+                    passwordEditText.requestFocus();
                 } else {
-                    // Aquí puedes mostrar un mensaje de error o hacer algún manejo de error
-                    Toast.makeText(getActivity(), "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+                    signIn(email, password);
                 }
             }
         });
@@ -105,4 +56,32 @@ public class login extends Fragment {
         return view;
     }
 
+    private boolean isValidEmail(String email) {
+        return !TextUtils.isEmpty(email) && Patterns.EMAIL_ADDRESS.matcher(email).matches();
+    }
+
+    private boolean isValidPassword(String password) {
+        return password.length() >= 8;
+    }
+
+    private void signIn(String email, String password) {
+        mAuth.signInWithEmailAndPassword(email, password)
+                .addOnCompleteListener(getActivity(), new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Inicio de sesión exitoso
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(getActivity(), "Inicio de sesión exitoso.", Toast.LENGTH_SHORT).show();
+                            // Redirigir a MainActivity o cualquier otra actividad
+                            Intent intent = new Intent(getActivity(), Usuario.class);
+                            startActivity(intent);
+                            getActivity().finish(); // Opcional: Finaliza la actividad actual
+                        } else {
+                            // Si el inicio de sesión falla
+                            Toast.makeText(getActivity(), "Inicio de sesión fallido: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
 }

@@ -1,14 +1,15 @@
 plugins {
     alias(libs.plugins.android.application)
+    id 'com.google.gms.google-services'
 }
 
 android {
-    namespace 'com.example.fragmentos'
+        namespace 'com.example.fragmentos'
     compileSdk 34
 
     defaultConfig {
         applicationId "com.example.fragmentos"
-        minSdk 22
+        minSdk 23
         targetSdk 34
         versionCode 1
         versionName "1.0"
@@ -32,6 +33,7 @@ android {
 }
 
 dependencies {
+    implementation libs.firebase.auth
     def lottieVersion = "6.4.0"
     implementation("com.airbnb.android:lottie-compose:$lottieVersion")
     implementation libs.appcompat
@@ -43,4 +45,6 @@ dependencies {
     testImplementation libs.junit
     androidTestImplementation libs.ext.junit
     androidTestImplementation libs.espresso.core
+    implementation platform('com.google.firebase:firebase-bom:33.0.0')
+    implementation 'com.google.firebase:firebase-analytics'
 }
