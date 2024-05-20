@@ -28,7 +28,7 @@ public class Usuario extends AppCompatActivity implements BottomNavigationView.O
 
     }
 
-    public boolean onNavigationItemSelected(@NonNull MenuItem Item) {
+    public boolean onNavigationItemSelected(@NonNull MenuItem Item) { 
         int itemid = Item.getItemId();
         if (itemid == R.id.Registro_cliente) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frameContenedor_adm, new Frag2()).commit();

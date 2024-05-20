@@ -2,33 +2,35 @@ package com.example.fragmentos;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class ManageUsersActivity extends AppCompatActivity {
+public class ManageUsersActivity extends Fragment {
 
     private EditText emailEditText, passwordEditText;
     private Button updateButton, deleteButton;
     private TextView statusTextView;
     private FirebaseAuth mAuth;
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.frag_manage_users);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.frag_manage_users, container, false);
 
-        emailEditText = findViewById(R.id.emailEditText);
-        passwordEditText = findViewById(R.id.passwordEditText);
-        updateButton = findViewById(R.id.updateButton);
-        deleteButton = findViewById(R.id.deleteButton);
-        statusTextView = findViewById(R.id.statusTextView);
+        emailEditText = view.findViewById(R.id.emailEditText);
+        passwordEditText = view.findViewById(R.id.passwordEditText);
+        updateButton = view.findViewById(R.id.updateButton);
+        deleteButton = view.findViewById(R.id.deleteButton);
 
         // Inicializar Firebase Auth
         mAuth = FirebaseAuth.getInstance();
@@ -46,6 +48,8 @@ public class ManageUsersActivity extends AppCompatActivity {
         });
 
         deleteButton.setOnClickListener(v -> deleteUser());
+
+        return view;
     }
 
     private void updateEmail(String email) {
