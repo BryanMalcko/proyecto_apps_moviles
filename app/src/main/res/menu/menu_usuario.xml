@@ -13,10 +13,22 @@
         android:title="@string/Reg_client"
         android:icon="@drawable/ic_reg_clien"
         />
+    <item
+        android:id="@+id/modificar_cliente"
+        android:title="@string/modify_client"
+        android:icon="@drawable/ic_modify"
+        />
+    <item
+        android:id="@+id/view_client"
+        android:title="@string/lista_cliente"
+        android:icon="@drawable/ic_view_client"
+        />
 
     <item
         android:id="@+id/cerrar_sesion"
         android:title="@string/Exit2"
         android:icon="@drawable/ic_session"
         />
+
+
 </menu>

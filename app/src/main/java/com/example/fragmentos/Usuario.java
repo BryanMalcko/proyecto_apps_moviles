@@ -34,7 +34,13 @@ public class Usuario extends AppCompatActivity implements BottomNavigationView.O
             getSupportFragmentManager().beginTransaction().replace(R.id.frameContenedor_adm, new Frag2()).commit();
         } else if (itemid == R.id.p_info_cliente) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frameContenedor_adm, new info_admin_frag()).commit();
-        } else if (itemid == R.id.cerrar_sesion) {
+        } else if (itemid == R.id.view_client) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frameContenedor_adm, new view_data()).commit();
+        }
+        else if (itemid == R.id.modificar_cliente) {
+            getSupportFragmentManager().beginTransaction().replace(R.id.frameContenedor_adm, new ManageUsersActivity()).commit();
+        }
+        else if (itemid == R.id.cerrar_sesion) {
             // Aquí cambiamos el fragmento por una actividad
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
@@ -43,5 +49,4 @@ public class Usuario extends AppCompatActivity implements BottomNavigationView.O
 
         return true;
     }
-
 }

@@ -21,4 +21,8 @@
     <string name="texto_principal_Adm">Pantalla Principal Administrador</string>
     <string name="Cerrar_sesion">¿Desea Cerrar Sesion?</string>
     <string name="Cerrar_sesion_si">Si</string>
+    <string name="modify_client">Modificar Cliente</string>
+    <string name="vista_users">Usuarios Disponibles</string>
+    <string name="datos">Usuarios disponibles</string>
+    <string name="data_error">Error</string>
 </resources>
