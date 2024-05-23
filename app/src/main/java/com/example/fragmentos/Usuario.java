@@ -34,8 +34,6 @@ public class Usuario extends AppCompatActivity implements BottomNavigationView.O
             getSupportFragmentManager().beginTransaction().replace(R.id.frameContenedor_adm, new Frag2()).commit();
         } else if (itemid == R.id.p_info_cliente) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frameContenedor_adm, new info_admin_frag()).commit();
-        } else if (itemid == R.id.view_client) {
-            getSupportFragmentManager().beginTransaction().replace(R.id.frameContenedor_adm, new view_data()).commit();
         }
         else if (itemid == R.id.modificar_cliente) {
             getSupportFragmentManager().beginTransaction().replace(R.id.frameContenedor_adm, new ManageUsersActivity()).commit();
@@ -46,7 +44,6 @@ public class Usuario extends AppCompatActivity implements BottomNavigationView.O
             startActivity(intent);
             finish(); // Opcional: cierra la actividad actual si no quieres que el usuario regrese a ella
         }
-
         return true;
     }
 }

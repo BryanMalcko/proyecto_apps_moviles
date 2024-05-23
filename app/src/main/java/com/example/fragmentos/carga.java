@@ -14,7 +14,7 @@ public class carga extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.carga);
 
-        final int DURACION = 1000;
+        final int DURACION = 5000;
 
         new Handler(Looper.getMainLooper()).postDelayed(() -> {
             Intent intent = new Intent(carga.this, MainActivity.class);

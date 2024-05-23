@@ -18,11 +18,6 @@
         android:title="@string/modify_client"
         android:icon="@drawable/ic_modify"
         />
-    <item
-        android:id="@+id/view_client"
-        android:title="@string/lista_cliente"
-        android:icon="@drawable/ic_view_client"
-        />
 
     <item
         android:id="@+id/cerrar_sesion"

@@ -1,20 +1,16 @@
 <resources>
-    <string name="app_name">fragmentos</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="app_name">Proyecto Final</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="Hola">Hola, Soy un Fragmento</string>
     <string name="texto_principal">Pantalla Principal</string>
     <string name="app_name2">Examen3</string>
     <string name="des"><![CDATA[Desarrollado por:\nDanna Paola Herrera Roman &&\nBryan De la vega Martínez]]></string>
     <string name="dos">Cargando</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="pprincipal">Pd soy un fragmento</string>
     <string name="texto_cliente">Bienvenido a la pantalla del cliente!!\nEn la parte de abajo tenemos un menú donde:\n- Encontrarás información\n- Puedes acceder como admin\n- Puedes registrarte</string>
     <string name="info_cliente">Hola!\nAca esta la informacion del cliente\npd. tambien soy fragmento</string>
     <string name="info_adm">Hola!\nAca esta la informacion del admin\npd. tambien soy fragmento</string>
-
     <string name="texto_Adm">Bienvenido a la pantalla del admin!!\nEn la parte de abajo tenemos un menú donde:\n- Encontrarás información\n- Puedes Registrar Usuarios\n- Puedes Cerrar sesión</string>
-
     <string name="Menufrag2">Registro</string>
     <string name="Menufrag3">Info Cliente</string>
     <string name="login">Login</string>
@@ -41,4 +37,13 @@
     <string name="vista_users">Usuarios Disponibles</string>
     <string name="datos">Usuarios disponibles</string>
     <string name="data_error">Error: %1$s</string>
+    <string name="contrase_a_antigua">Contraseña Antigua</string>
+    <string name="nueva_contrase_a">Nueva Contraseña</string>
+    <string name="confirma_contrase_a">Confirma Contraseña</string>
+    <string name="actualizar_contrase_a">Actualizar contraseña</string>
+    <string name="borrar_usuario">Borrar Usuario</string>
+    <string name="Email">Nuevo Correo electronico</string>
+    <string name="Actualizar_email">Actualizar Correo</string>
+    <string name="modificaciones">Modificaciones</string>
+    <string name="Proy_final">Proyecto Final</string>
 </resources>
